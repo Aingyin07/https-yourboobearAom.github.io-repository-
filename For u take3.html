@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will You Be My Valentine?</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ff7eb9, #ff758c);
+      color: white;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 3rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 50px;
+      background: white;
+      color: #ff7eb9;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h2>My Dearest Yount, Do you Love Me?</h2>
+    <button onclick="showConfetti()">Ofc,Yes!</button>
+    <button onclick="moveButton()">Umm..No</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    function showConfetti() {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+      alert(" Love you More 🫶");
+    }
+
+    function moveButton() {
+      const button = document.querySelector('button:nth-child(3)');
+      button.style.position = 'absolute';
+      button.style.left = `${Math.random() * 80 + 10}%`;
+      button.style.top = `${Math.random() * 80 + 10}%`;
+    }
+  </script>
+</body>
+</html>
